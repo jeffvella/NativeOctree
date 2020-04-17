@@ -1,0 +1,32 @@
+{
+    "name": "Octree",
+    "references": [
+        "Unity.PerformanceTesting",
+        "Unity.Entities",
+        "Unity.Mathematics",
+        "Unity.Mathematics.Extensions",
+        "Unity.Properties",
+        "Unity.Jobs",
+        "Unity.Burst",
+        "Unity.Collections",
+        "Unity.Entities.Tests",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
+        "Unity.Physics"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

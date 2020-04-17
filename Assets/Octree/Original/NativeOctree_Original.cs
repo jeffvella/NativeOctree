@@ -5,23 +5,6 @@ using Unity.Mathematics;
 
 namespace NativeOctree
 {
-	// Represents an element node in the octree.
-	public struct OctElement<T> where T : unmanaged
-	{
-		public float3 pos;
-		public T element;
-	}
-
-	struct OctNode
-	{
-		// Points to this node's first child index in elements
-		public int firstChildIndex;
-
-		// Number of elements in the leaf
-		public short count;
-		public bool isLeaf;
-	}
-
 	/// <summary>
 	/// An Octree aimed to be used with Burst, supports fast bulk insertion and querying.
 	///
@@ -29,7 +12,7 @@ namespace NativeOctree
 	/// - Better test coverage
 	/// - Automated depth / bounds / max leaf elements calculation
 	/// </summary>
-	public unsafe partial struct NativeOctree<T> : IDisposable where T : unmanaged
+	public unsafe partial struct NativeOctree_Original<T> : IDisposable where T : unmanaged
 	{
 		// Safety
 		AtomicSafetyHandle safetyHandle;
@@ -58,7 +41,7 @@ namespace NativeOctree
 		/// - Ensure the bounds are not way bigger than needed, otherwise the buckets are very off. Probably best to calculate bounds
 		/// - The higher the depth, the larger the overhead, it especially goes up at a depth of 7/8
 		/// </summary>
-		public NativeOctree(AABB bounds, Allocator allocator = Allocator.Temp, int maxDepth = 6, short maxLeafElements = 16,
+		public NativeOctree_Original(AABB bounds, Allocator allocator = Allocator.Temp, int maxDepth = 6, short maxLeafElements = 16,
 			int initialElementsCapacity = 256
 		) : this()
 		{

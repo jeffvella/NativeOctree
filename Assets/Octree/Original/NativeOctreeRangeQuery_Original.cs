@@ -6,18 +6,18 @@ using static Unity.Mathematics.math;
 
 namespace NativeOctree
 {
-	public unsafe partial struct NativeOctree<T> where T : unmanaged
+	public unsafe partial struct NativeOctree_Original<T> where T : unmanaged
 	{
 		struct OctreeRangeQuery
 		{
-			NativeOctree<T> tree;
+			NativeOctree_Original<T> tree;
 
 			UnsafeList* fastResults;
 			int count;
 
 			AABB bounds;
 
-			public void Query(NativeOctree<T> tree, AABB bounds, NativeList<OctElement<T>> results)
+			public void Query(NativeOctree_Original<T> tree, AABB bounds, NativeList<OctElement<T>> results)
 			{
 				this.tree = tree;
 				this.bounds = bounds;

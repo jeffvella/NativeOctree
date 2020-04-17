@@ -19,7 +19,7 @@ namespace NativeOctree
 			[ReadOnly]
 			public NativeArray<OctElement<T>> Elements;
 
-			public NativeOctree<T> Octree;
+			public NativeOctree_Original<T> Octree;
 
 			public void Execute()
 			{
@@ -37,7 +37,7 @@ namespace NativeOctree
 			public AABB Bounds;
 
 			[ReadOnly]
-			public NativeOctree<T> Octree;
+			public NativeOctree_Original<T> Octree;
 
 			public NativeList<OctElement<T>> Results;
 
